@@ -3,10 +3,12 @@ import Header from './Header'
 import Footer from './Footer'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import Search from './Search'
+import ScrollTo from '../../utils/scrollTo'
 
 const Main = (props) => {
     return (
         <HelmetProvider>
+            <ScrollTo />
             <Helmet
                 titleTemplate='%s | React Youtube'
                 defaultTitle='React Youtube'
@@ -15,7 +17,7 @@ const Main = (props) => {
                 {props.title &&
                     <title>{props.title}</title>
                 }
-                <meta name='description' content={props.description}/>
+                <meta name='description' content={props.description} />
             </Helmet>
 
             <Header />
